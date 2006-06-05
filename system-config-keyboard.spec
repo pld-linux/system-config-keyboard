@@ -1,7 +1,7 @@
 Summary:	A graphical interface for modifying the keyboard
 Name:		system-config-keyboard
 Version:	1.2.7
-Release:	0.1
+Release:	0.3
 License:	GPL
 Group:		Base
 URL:		http://fedora.redhat.com/projects/config-tools
@@ -14,6 +14,7 @@ Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
 Requires:	python-xf86config
 Requires:	python-rhpl >= 0.53
+Requires:	firstboot
 #Requires:	usermode >= 1.36
 BuildArch:	noarch
 ExclusiveOS:	Linux
@@ -48,15 +49,11 @@ desktop-file-install --vendor system --delete-original      \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if 0
 %post
 touch --no-create %{_datadir}/icons/hicolor
 if [ -x %{_bindir}/gtk-update-icon-cache ]; then
 	gtk-update-icon-cache -q %{_datadir}/icons/hicolor
-fi
-
-%preun
-if [ -d /usr/share/system-config-keyboard ] ; then
-	rm -rf /usr/share/system-config-keyboard/*.pyc
 fi
 
 %postun
@@ -64,6 +61,7 @@ touch --no-create %{_datadir}/icons/hicolor
 if [ -x %{_bindir}/gtk-update-icon-cache ]; then
 	gtk-update-icon-cache -q %{_datadir}/icons/hicolor
 fi
+%endif
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)

@@ -1,7 +1,7 @@
 Summary:	A graphical interface for modifying the keyboard
 Name:		system-config-keyboard
 Version:	1.2.7
-Release:	0.3
+Release:	0.4
 License:	GPL
 Group:		Base
 URL:		http://fedora.redhat.com/projects/config-tools
@@ -10,11 +10,11 @@ Source0:	%{name}-%{version}.tar.bz2
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
+Requires:	firstboot
 Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
-Requires:	python-xf86config
 Requires:	python-rhpl >= 0.53
-Requires:	firstboot
+Requires:	python-xf86config
 #Requires:	usermode >= 1.36
 BuildArch:	noarch
 ExclusiveOS:	Linux
@@ -40,9 +40,9 @@ desktop-file-install --vendor system --delete-original      \
   --add-category X-Red-Hat-Base          \
   $RPM_BUILD_ROOT%{_desktopdir}/system-config-keyboard.desktop
 
-%py_comp $RPM_BUILD_ROOT/usr/share/system-config-keyboard
-%py_ocomp $RPM_BUILD_ROOT/usr/share/system-config-keyboard
-%py_postclean /usr/share/system-config-keyboard
+%py_comp $RPM_BUILD_ROOT%{_datadir}/system-config-keyboard
+%py_ocomp $RPM_BUILD_ROOT%{_datadir}/system-config-keyboard
+%py_postclean %{_datadir}/system-config-keyboard
 
 %find_lang %{name}
 
@@ -65,13 +65,13 @@ fi
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
+%config(noreplace) %verify(not md5 mtime size) /etc/security/console.apps/system-config-keyboard
+%config(noreplace) %verify(not md5 mtime size) /etc/pam.d/system-config-keyboard
 %attr(755,root,root) %{_bindir}/system-config-keyboard
-%dir /usr/share/system-config-keyboard
-/usr/share/system-config-keyboard/*
-%dir /usr/share/firstboot/
-%dir /usr/share/firstboot/modules
-/usr/share/firstboot/modules/*
-%attr(644,root,root) %{_desktopdir}/system-config-keyboard.desktop
-%attr(644,root,root) %config /etc/security/console.apps/system-config-keyboard
-%attr(644,root,root) %config /etc/pam.d/system-config-keyboard
-%attr(644,root,root) %{_iconsdir}/hicolor/48x48/apps/system-config-keyboard.png
+%dir %{_datadir}/system-config-keyboard
+%{_datadir}/system-config-keyboard/*
+%dir %{_datadir}/firstboot
+%dir %{_datadir}/firstboot/modules
+%{_datadir}/firstboot/modules/*
+%{_desktopdir}/system-config-keyboard.desktop
+%{_iconsdir}/hicolor/48x48/apps/system-config-keyboard.png

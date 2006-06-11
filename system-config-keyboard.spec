@@ -1,12 +1,13 @@
 Summary:	A graphical interface for modifying the keyboard
+Summary(pl):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.7
 Release:	0.4
 License:	GPL
 Group:		Base
-URL:		http://fedora.redhat.com/projects/config-tools
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	625462272563a04e917229c1a06fd372
+URL:		http://fedora.redhat.com/projects/config-tools
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
@@ -25,20 +26,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 system-config-keyboard is a graphical user interface that allows the
 user to change the default keyboard of the system.
 
+%description -l pl
+system-config-keyboard to graficzny interfejs u¿ytkownika
+umo¿liwiaj±cy u¿ytkownikowi zmianê domy¶lnej klawiatury w systemie.
+
 %prep
 %setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTROOT=$RPM_BUILD_ROOT
 
-desktop-file-install --vendor system --delete-original      \
-  --dir $RPM_BUILD_ROOT%{_desktopdir}             \
-  --add-category Application \
-  --add-category SystemSetup \
-  --add-category X-Red-Hat-Base          \
-  $RPM_BUILD_ROOT%{_desktopdir}/system-config-keyboard.desktop
+desktop-file-install --vendor system --delete-original \
+	--dir $RPM_BUILD_ROOT%{_desktopdir} \
+	--add-category Application \
+	--add-category SystemSetup \
+	--add-category X-Red-Hat-Base \
+	$RPM_BUILD_ROOT%{_desktopdir}/system-config-keyboard.desktop
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/system-config-keyboard
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/system-config-keyboard

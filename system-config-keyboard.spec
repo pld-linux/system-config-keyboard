@@ -2,11 +2,12 @@ Summary:	A graphical interface for modifying the keyboard
 Summary(pl):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.7
-Release:	0.4
+Release:	0.6
 License:	GPL
 Group:		Base
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	625462272563a04e917229c1a06fd372
+Patch0:		%{name}-consolehelper.patch
 URL:		http://fedora.redhat.com/projects/config-tools
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
@@ -32,6 +33,7 @@ umo¿liwiaj±cy u¿ytkownikowi zmianê domy¶lnej klawiatury w systemie.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

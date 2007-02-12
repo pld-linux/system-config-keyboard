@@ -1,5 +1,5 @@
 Summary:	A graphical interface for modifying the keyboard
-Summary(pl):	Graficzny interfejs do zmiany klawiatury
+Summary(pl.UTF-8):   Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.7
 Release:	0.6
@@ -27,9 +27,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 system-config-keyboard is a graphical user interface that allows the
 user to change the default keyboard of the system.
 
-%description -l pl
-system-config-keyboard to graficzny interfejs uøytkownika
-umoøliwiaj±cy uøytkownikowi zmianÍ domy∂lnej klawiatury w systemie.
+%description -l pl.UTF-8
+system-config-keyboard to graficzny interfejs u≈ºytkownika
+umo≈ºliwiajƒÖcy u≈ºytkownikowi zmianƒô domy≈õlnej klawiatury w systemie.
 
 %prep
 %setup -q

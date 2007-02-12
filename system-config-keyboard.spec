@@ -1,5 +1,5 @@
 Summary:	A graphical interface for modifying the keyboard
-Summary(pl.UTF-8):   Graficzny interfejs do zmiany klawiatury
+Summary(pl.UTF-8):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.7
 Release:	0.6

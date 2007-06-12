@@ -8,7 +8,7 @@ Group:		Base
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	625462272563a04e917229c1a06fd372
 Patch0:		%{name}-consolehelper.patch
-URL:		http://fedora.redhat.com/projects/config-tools
+URL:		http://fedora.redhat.com/projects/config-tools/
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool

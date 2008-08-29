@@ -5,11 +5,12 @@ Version:	1.2.15
 Release:	1
 License:	GPL
 Group:		Base
+# https://fedorahosted.org/releases/s/y/system-config-keyboard/ (not yet)
 Source0:	%{name}-%{version}.tar.gz
 # Source0-md5:	13a0e4444f7fcbb6a3e9c88f42285faf
 Patch1:		%{name}-beenset.patch
 Patch2:		%{name}-fixcomments.patch
-URL:		http://fedora.redhat.com/projects/config-tools/
+URL:		https://fedorahosted.org/system-config-keyboard/
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool

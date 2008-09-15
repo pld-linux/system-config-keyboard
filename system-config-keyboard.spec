@@ -2,7 +2,7 @@ Summary:	A graphical interface for modifying the keyboard
 Summary(pl.UTF-8):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.15
-Release:	1
+Release:	2
 License:	GPL
 Group:		Base
 # https://fedorahosted.org/releases/s/y/system-config-keyboard/ (not yet)
@@ -14,6 +14,7 @@ URL:		https://fedorahosted.org/system-config-keyboard/
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
+Requires(post,postun):	hicolor-icon-theme
 Requires:	firstboot >= 1.99
 Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
@@ -58,19 +59,11 @@ desktop-file-install --vendor system --delete-original \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%if 0
 %post
-touch --no-create %{_datadir}/icons/hicolor
-if [ -x %{_bindir}/gtk-update-icon-cache ]; then
-	gtk-update-icon-cache -q %{_datadir}/icons/hicolor
-fi
+%update_icon_cache hicolor
 
 %postun
-touch --no-create %{_datadir}/icons/hicolor
-if [ -x %{_bindir}/gtk-update-icon-cache ]; then
-	gtk-update-icon-cache -q %{_datadir}/icons/hicolor
-fi
-%endif
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)

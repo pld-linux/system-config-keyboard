@@ -14,7 +14,7 @@ URL:		https://fedorahosted.org/system-config-keyboard/
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
-BuildRequires:	sed
+BuildRequires:	sed >= 4
 Requires(post,postun):	hicolor-icon-theme
 Requires:	firstboot >= 1.99
 Requires:	gtk+2 >= 2:2.6

@@ -2,7 +2,7 @@ Summary:	A graphical interface for modifying the keyboard
 Summary(pl.UTF-8):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.2.15
-Release:	5
+Release:	6
 License:	GPL
 Group:		Base
 # https://fedorahosted.org/releases/s/y/system-config-keyboard/ (not yet)

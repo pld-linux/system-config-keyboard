@@ -21,7 +21,6 @@ Requires(post,postun):	hicolor-icon-theme
 Requires:	firstboot >= 1.99
 Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
-Requires:	python-rhpl >= 0.53
 Requires:	usermode >= 1.108
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

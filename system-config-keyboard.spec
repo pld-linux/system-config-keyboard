@@ -20,7 +20,6 @@ Requires:	firstboot >= 1.99
 Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
 Requires:	python-rhpl >= 0.53
-Requires:	python-xf86config
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

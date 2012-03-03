@@ -1,0 +1,20 @@
+--- system-config-keyboard-1.3.1/./lib/keyboard.py~	2009-09-14 14:03:43.000000000 +0300
++++ system-config-keyboard-1.3.1/./lib/keyboard.py	2012-03-03 17:23:49.125243674 +0200
+@@ -120,7 +120,7 @@
+ 
+     def read(self, instPath = "/"):
+         try:
+-            file = open(instPath + "/etc/sysconfig/keyboard", "r")
++            file = open(instPath + "/etc/sysconfig/console", "r")
+         except:
+             return
+         self.config = []
+@@ -133,7 +133,7 @@
+         self.beenset = 1
+ 
+     def write(self, instPath = "/"):
+-	file = open(instPath + "/etc/sysconfig/keyboard", "w")
++	file = open(instPath + "/etc/sysconfig/console", "w")
+ 	for line in self.config:
+                 file.write (line[0]);
+         try:

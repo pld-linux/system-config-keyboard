@@ -2,13 +2,14 @@ Summary:	A graphical interface for modifying the keyboard
 Summary(pl.UTF-8):	Graficzny interfejs do zmiany klawiatury
 Name:		system-config-keyboard
 Version:	1.3.1
-Release:	0.10
+Release:	0.14
 License:	GPL v2+
 Group:		Base
 Source0:	https://fedorahosted.org/releases/s/y/system-config-keyboard/%{name}-%{version}.tar.gz
 # Source0-md5:	012b1aec6d237f853bea6824e71d19ed
 Patch0:		s-c-keyboard-do_not_remove_the_OK_button.patch
 Patch1:		sck-1.3.1-no-pyxf86config.patch
+Patch2:		kbdconf.patch
 URL:		https://fedorahosted.org/system-config-keyboard/
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext-devel
@@ -20,6 +21,7 @@ Requires:	firstboot >= 1.99
 Requires:	gtk+2 >= 2:2.6
 Requires:	python >= 1:2.0
 Requires:	python-rhpl >= 0.53
+Requires:	usermode >= 1.108
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,6 +37,7 @@ umożliwiający użytkownikowi zmianę domyślnej klawiatury w systemie.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__make}

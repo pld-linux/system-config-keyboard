@@ -13,7 +13,7 @@ Patch2:		kbdconf.patch
 Patch3:		parse-config.patch
 URL:		https://fedorahosted.org/system-config-keyboard/
 BuildRequires:	desktop-file-utils
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool
 BuildRequires:	sed >= 4.0
 Requires(post,postun):	gtk-update-icon-cache
